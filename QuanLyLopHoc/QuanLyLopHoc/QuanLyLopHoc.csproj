@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6BE13CE9-BD59-4357-9FF3-28E3D80DD021}</ProjectGuid>
+    <ProjectGuid>{A001E031-ED9E-4890-926F-986F8A6A87B8}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>QuanLyLopHoc</RootNamespace>
     <AssemblyName>QuanLyLopHoc</AssemblyName>
