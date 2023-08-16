@@ -10,8 +10,7 @@ begin
 	insert into @DSGV (magv, tengv, gioitinh, ngaysinh, DIACHI, sdt, monhocdamnhiem)
 	select MAGV, HOTEN, GIOITINH, NGAYSINH, DIACHI, DIENTHOAI, TENMH
 	from GIAOVIEN GV, MONHOC MH
-	where GV.MAMH = MH.MAMH
-
+	where MH.MAMH=GV.MAMH
 	return;
 end
 SELECT *FROM GIAOVIEN
@@ -54,7 +53,7 @@ select * from dbo.fuDanhSachHS ('L01')
 
 select * from dbo.fuDanhSachHS ('L02')
 
---function 4 : Viết hàm in điểm thi của học sinh bao gồm tên môn học, học kì, điểm thi miệng, điểm thi 15p, điểm thi 45p
+-- function 4 : Viết hàm in điểm thi của học sinh bao gồm tên môn học, học kì, điểm thi miệng, điểm thi 15p, điểm thi 45p
 --điểm thi học kì với mã học sinh là tham số truyền vào
 Create function fuInDiemThiHS (@mahs char(10))
 returns @DTHS table (tenmonhoc nvarchar(30),hocki char(10), diemmieng float, diem15p float, diem45p float, diemhocki float)
