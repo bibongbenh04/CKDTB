@@ -29,7 +29,7 @@ CREATE TABLE HOCSINH
 	GIOITNH CHAR(3),
 	NGAYSINH DATETIME,
 	MALOP CHAR(10),
-	DIACHI NVARCHAR(150),
+	DIACHI VARCHAR(150),
 	DIENTHOAI VARCHAR(20),
 	CONSTRAINT PK_MAHS PRIMARY KEY(MAHS),
 )
@@ -68,7 +68,7 @@ CREATE TABLE XEPLOAI
 	MAHS CHAR(10),
 	HOCKY CHAR(10),
 	GPA FLOAT,
-	XEPLOAI VARCHAR(10),
+	XEPLOAI NVARCHAR(10),
 	CONSTRAINT PK_MAHS_HK PRIMARY KEY(MAHS, HOCKY),
 	CONSTRAINT PK_HS_MAHS FOREIGN KEY(MAHS) REFERENCES HOCSINH(MAHS)
 )
@@ -89,13 +89,13 @@ CREATE TABLE THOIKHOABIEUHOCSINH
 (	
 	HOCKY CHAR(10),
 	MAHS CHAR(10),
-	TIET CHAR(10),
-	THU_2 CHAR(10),
-	THU_3 CHAR(10),
-	THU_4 CHAR(10),
-	THU_5 CHAR(10),
-	THU_6 CHAR(10),
-	THU_7 CHAR(10),
+	TIET NCHAR(10),
+	THU_2 NCHAR(10),
+	THU_3 NCHAR(10),
+	THU_4 NCHAR(10),
+	THU_5 NCHAR(10),
+	THU_6 NCHAR(10),
+	THU_7 NCHAR(10),
 	CONSTRAINT PK_MAHS_TKB FOREIGN KEY(MAHS) REFERENCES HOCSINH(MAHS)
 )
 ALTER TABLE HOCSINH
@@ -121,48 +121,48 @@ SET DATEFORMAT DMY
 
 INSERT INTO HOCSINH(MAHS,HOTEN,MALOP,GIOITNH,NGAYSINH,DIACHI,DIENTHOAI)
 VALUES
-('10HS00001','Lam Bich Van','L01','Nu','01/01/2008','110 Vo Van Tan, phuong 4, quan 3, TP Ho Chi Minh','0913211452'),
-('10HS00002','Nguyen Thi Hong','L01','Nu','20/01/2008','200 An Duong Vuong, phuong 4, quan 5, TP Ho Chi Minh','0975112352'),
-('10HS00003','Huynh Duc Hieu','L02','Nam','25/08/2008','351 Lac Long Quan, phuong 5, quan 11, TP Ho Chi Minh','0772556391'),
-('10HS00004','Huynh Duc Toan','L02','Nam','25/08/2008','351 Lac Long Quan, phuong 5, quan 11, TP Ho Chi Minh','0903511456'),
-('10HS00005','Nguyen Van Anh','L03','Nu','03/12/2008','240 Lac Long Quan, phuong 5, quan 11, TP Ho Chi Minh','0905132269'),
-('10HS00006','Nguyen Thi Lac','L03','Nu','22/11/2008','199 An Duong Vuong, phuong 3, quan 5, TP Ho Chi Minh','0905128773'),
-('11HS00001','Ta Quang Lan','L04','Nam','02/11/2007','201 An Duong Vuong, phuong 3, quan 5, TP Ho Chi Minh','0905121363'),
-('11HS00002','Ta Thi Nu','L04','Nu','19/10/2007','120 An Duong Vuong, phuong 1, quan 5, TP Ho Chi Minh','0905251364'),
-('11HS00003','Huynh Cong Anh','L05','Nam','25/07/2007','49 Cao Lo, phuong 4, quan 8, TP Ho Chi Minh','0905121999'),
-('11HS00004','Le Duc Loi','L05','Nam','11/04/2007','50 Pham Hung, phuong 4, quan 8, TP Ho Chi Minh','0903522799'),
-('11HS00005','Tran Thi Le','L06','Nu','30/07/2007','112 Nguyen Van Cu, phuong 1, quan 5, TP Ho Chi Minh','0905366123'),
-('11HS00006','Nguyen Van Tai','L06','Nam','21/10/2007','100 Nguyen Van Cu, phuong 1, quan 5, TP Ho Chi Minh','0905355693'),
-('12HS00001','Nguyen Van Than Loi','L07','Nam','21/10/2006','Chung cu Topaz Elite, phuong 4, quan 8, TP Ho Chi Minh','0905300193'),
-('12HS00002','Tran Thi Thanh Thanh','L07','Nu','20/11/2006','220 Nguyen Trai, phuong 4, quan 5, TP Ho Chi Minh','0905354413'),
-('12HS00003','Huynh Thi Anh Dao','L08','Nu','11/03/2006','110 Tran Hung Dao, phuong 2, quan 5, TP Ho Chi Minh','0905321667'),
-('12HS00004','Duong Ba Nam','L08','Nam','19/05/2006','23 Cao Lo, phuong 4, quan 8, TP Ho Chi Minh','0905112778'),
-('12HS00005','Hoang Thuy Linh','L09','Nu','12/10/2006','1123 Tran Hung Dao, phuong 4, quan 1, TP Ho Chi Minh','0905311213'),
-('12HS00006','Hoang Thi Thuy Linh','L09','Nu','02/01/2006','111 Cong Quynh, phuong 3, quan 1, TP Ho Chi Minh','0905311213');
+('10HS00001',N'Lâm Bích Vân','L01','Nu','01/01/2008',N'110 Võ Văn Tần, phường 4, quận 3, TP Hồ Chí Minh','0913211452'),
+('10HS00002',N'Nguyễn Thị Hồng','L01','Nu','20/01/2008',N'200 An Dương Vương, phường 4, quận 5, TP Hồ Chí Minh','0975112352'),
+('10HS00003',N'Huỳnh Đức Hiếu','L02','Nam','25/08/2008',N'351 Lạc Long Quân, phường 5, quận 51, TP Hồ Chí Minh','0772556391'),
+('10HS00004',N'Huỳnh Đức Toàn','L02','Nam','25/08/2008',N'351 Lạc Long Quân, phường 5, quận 51, TP Hồ Chí Minh','0903511456'),
+('10HS00005',N'Nguyễn Văn Anh','L03','Nu','03/12/2008',N'240 Lạc Long Quân, phường 5, quận 51, TP Hồ Chí Minh','0905132269'),
+('10HS00006',N'Nguyễn Thị Lạc','L03','Nu','22/11/2008',N'199 An Dương Vương, phường 3, quận 5, TP Hồ Chí Minh','0905128773'),
+('11HS00001',N'Tạ Quang Lân','L04','Nam','02/11/2007',N'201 An Dương Vương, phường 3, quận 5, TP Hồ Chí Minh','0905121363'),
+('11HS00002',N'Tạ Thị Nữ','L04','Nu','19/10/2007',N'120 An Dương Vương, phường 1, quận 5, TP Hồ Chí Minh','0905251364'),
+('11HS00003',N'Huỳnh Công Anh','L05','Nam','25/07/2007',N'49 Cao Lo, phường 4, quận 8, TP Hồ Chí Minh','0905121999'),
+('11HS00004',N'Lê Đức Lợi','L05','Nam','11/04/2007',N'50 Phạm Hùng, phường 4, quận 8, TP Hồ Chí Minh','0903522799'),
+('11HS00005',N'Trần Thị Lệ','L06','Nu','30/07/2007',N'112 Nguyễn Văn Cừ, phường 1, quận 5, TP Hồ Chí Minh','0905366123'),
+('11HS00006',N'Nguyễn Văn Tài','L06','Nam','21/10/2007',N'100 Nguyễn Văn Cừ, phường 1, quận 5, TP Hồ Chí Minh','0905355693'),
+('12HS00001',N'Nguyen Văn Thành Lợi','L07','Nam','21/10/2006',N'Chung cư Topaz Elite, phường 4, quận 8, TP Hồ Chí Minh','0905300193'),
+('12HS00002',N'Trần Thị Thanh Thanh','L07','Nu','20/11/2006',N'220 Nguyễn Trãi, phường 4, quận 5, TP Hồ Chí Minh','0905354413'),
+('12HS00003',N'Huỳnh Thị Anh Đào','L08','Nu','11/03/2006',N'110 Tran Hung Dao, phường 2, quận 5, TP Hồ Chí Minh','0905321667'),
+('12HS00004',N'Dương Bá Nam','L08','Nam','19/05/2006',N'23 Cao Lo, phường 4, quận 8, TP Hồ Chí Minh','0905112778'),
+('12HS00005',N'Hoàng Thùy Linh','L09','Nu','12/10/2006',N'1123 Tran Hung Dao, phường 4, quận 5, TP Hồ Chí Minh','0905311213'),
+('12HS00006',N'Hoàng Thị Thùy Linh','L09','Nu','02/01/2006',N'111 Cong Quynh, phường 3, quận 5, TP Hồ Chí Minh','0905311213');
 
 INSERT INTO MONHOC(MAMH,TENMH)
 VALUES
-('MH100001','TOAN 10'),
-('MH100002','VAN 10'),
-('MH100003','ANH 10'),
-('MH110001','TOAN 11'),
-('MH110002','VAN 11'),
-('MH110003','ANH 11'),
-('MH120001','TOAN 12'),
-('MH120002','VAN 12'),
-('MH120003','ANH 12');
+('MH100001',N'Toán'),
+('MH100002',N'Văn'),
+('MH100003',N'Anh'),
+('MH110001',N'Toán'),
+('MH110002',N'Văn'),
+('MH110003',N'Anh'),
+('MH120001',N'Toán'),
+('MH120002',N'Văn'),
+('MH120003',N'Anh');
 
 INSERT INTO GIAOVIEN ( MAGV,HOTEN,GIOITINH,NGAYSINH,DIACHI,DIENTHOAI,MAMH)
 VALUES
-('GV00001','Tran Thi Thuong','Nu','01/01/1975','109 Vo Van Tan, phuong 4, quan 3, TP Ho Chi Minh','0912321452','MH100001'),
-('GV00002','Do Van Nho','Nam','22/11/1985','112 Nguyen Trai, phuong 4, quan 5, TP Ho Chi Minh','0772332112','MH100002'),
-('GV00003','Nguyen Cong Phuong','Nam','25/11/1980','Chung Cu Go Dau 2, phuong Tan Son Nhi, quan Tan Phu, TP Ho Chi Minh','0913114252','MH100003'),
-('GV00004','Nguyen Thi Thuy Nhien','Nu','31/12/1984','112 Ly Thai To, phuong 3, quan 3, TP Ho Chi Minh','0975445778','MH110001'),
-('GV00005','Huynh Cong Ba','Nam','22/09/1979','208 Ly Thai To, phuong 3, quan 3, TP Ho Chi Minh','0973625311','MH110002'),
-('GV00006','Huynh Thi Kim Anh','Nu','02/09/1989','269 Nguyen Thi Minh Khai, phuong 3, quan 1, TP Ho Chi Minh','0975963112','MH110003'),
-('GV00007','Do Quang Manh','Nam','09/11/1991','111 Hung Vuong, phuong 6, quan 5, TP Ho Chi Minh','0975961798','MH120001'),
-('GV00008','Tran Thi Nu','Nu','22/05/1993','209 Hong Bang, phuong 11, quan 5, TP Ho Chi Minh','0975932165','MH120002'),
-('GV00009','Thai Van To','Nam','09/11/1973','33 Ngo Quyen, phuong 11, quan 5, TP Ho Chi Minh','0975433699','MH120003')
+('GV00001',N'Trần Thị Thương','Nu','01/01/1975',N'109 Võ Văn Tần, phường 4, quận 3, TP Hồ Chí Minh','0912321452','MH100001'),
+('GV00002',N'Đỗ Văn Nhỏ','Nam','22/11/1985',N'112 Nguyễn Trãi, phường 4, quận 5, TP Hồ Chí Minh','0772332112','MH100002'),
+('GV00003',N'Nguyễn Công Phương','Nam','25/11/1980',N'Chung Cu Gò Dầu 2, phường Tân Sơn Nhì, quận Tân Phú, TP Hồ Chí Minh','0913114252','MH100003'),
+('GV00004',N'Nguyễn Thị Thùy Nhiên','Nu','31/12/1984',N'112 Lý Thái Tổ, phường 3, quận 3, TP Hồ Chí Minh','0975445778','MH110001'),
+('GV00005',N'Huỳnh Công Ba','Nam','22/09/1979',N'208 Lý Thái Tổ, phường 3, quận 3, TP Hồ Chí Minh','0973625311','MH110002'),
+('GV00006',N'Huỳnh Thị Kim Anh','Nu','02/09/1989',N'269 Nguyễn Thị Minh Khai, phường 3, quận 5, TP Hồ Chí Minh','0975963112','MH110003'),
+('GV00007',N'Đỗ Quang Mạnh','Nam','09/11/1991',N'111 Hùng Vương, phường 6, quận 5, TP Hồ Chí Minh','0975961798','MH120001'),
+('GV00008',N'Trần Thị Nữ','Nu','22/05/1993',N'209 Hong Bang, phường 11, quận 5, TP Hồ Chí Minh','0975932165','MH120002'),
+('GV00009',N'Thái Văn Tư','Nam','09/11/1973',N'33 Ngo Quyen, phường 11, quận 5, TP Hồ Chí Minh','0975433699','MH120003')
 
 INSERT INTO KETQUA (MAHS,MAMH,HOCKY,DIEMTHIMIENG,DIEMTHI15P,DIEMTHI1TIET,DIEMTHIHOCKY)
 VALUES
@@ -178,11 +178,11 @@ VALUES
 
 INSERT INTO THOIKHOABIEUHOCSINH (HOCKY,MAHS,TIET,THU_2,THU_3,THU_4,THU_5,THU_6,THU_7)
 VALUES
-('1','10HS00001','Tiet 1','Toan','Ngu van','Tieng Anh','Toan', 'Tieng Phap','Tin hoc'),
-('1','10HS00001','Tiet 2','Toan','Ngu van','Tieng Anh','Vat li', 'Tieng Phap','Tin hoc'),
-('1','10HS00001','Tiet 3','Dia','Tin hoc','Lich su','Vat li', 'Hoa hoc','Tin hoc'),
-('1','10HS00001','Tiet 4','Dia','Tin hoc','Lich su','Ngu van','The duc','Van hoc'),
-('1','10HS00001','Tiet 5','Chao co','GDCD','Toan', 'Hoa hoc','The duc','SHCN')
+('1','10HS00001','Tiet 1','Toán','Ngữ văn','Tiếng Anh','Toán', 'Tiếng Pháp','Tin học'),
+('1','10HS00001','Tiet 2','Toán','Ngữ văn','Tiếng Anh','Vật lí', 'Tiếng Pháp','Tin học'),
+('1','10HS00001','Tiet 3','Địa lý','Tin học','Lịch sử','Vật lí', 'Hóa học','Tin học'),
+('1','10HS00001','Tiet 4','Địa lý','Tin học','Lịch sử','Ngữ văn','Thể dục','Ngữ Văn'),
+('1','10HS00001','Tiet 5','Chào cờ','GDCD','Toán', 'Hóa học','Thể dục','SHCN')
 
 INSERT INTO THOIKHOABIEUGIAOVIEN (HOCKY,MAGV,TIET,THU_2,THU_3,THU_4,THU_5,THU_6,THU_7)
 VALUES
