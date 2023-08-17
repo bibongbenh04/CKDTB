@@ -1,0 +1,1 @@
+sqlcmd -E -S .\HONGQUAN_SEVER -i scriptData.sql
